@@ -11,10 +11,13 @@ exports.getAdvant= async (req, res, next) => {
       "game_name",
       "img_url",
       "rtp_percentage",
-      "bet_start",
+      "bet_start", 
       "bet_end",
       "gacor_time_start",
       "gacor_time_end"
+    ],
+    order: [
+      ['game_name', 'DESC'],
     ],
     nest: true,
   });

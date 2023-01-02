@@ -16,6 +16,9 @@ exports.getIonslot= async (req, res, next) => {
       "gacor_time_start",
       "gacor_time_end"
     ],
+    order: [
+      ['game_name', 'DESC'],
+    ],
     nest: true,
   });
 

@@ -35,12 +35,12 @@ exports.getId = async (req, res, next) => {
 
   try {
     results.push({
-      items: item,
+      items: item[0],
       message: "detail game",
       status: 200,
     });
     console.log(results);
-    res.send(results);
+    res.send(results[0]);
   } catch (err) {
     console.log(err);
   }
