@@ -9,12 +9,7 @@ exports.getLive22= async (req, res, next) => {
     attributes: [
       "id",
       "game_name",
-      "img_url",
-      "rtp_percentage",
-      "bet_start",
-      "bet_end",
-      "gacor_time_start",
-      "gacor_time_end"
+      "rtp_percentage"
     ],
     order: [
       ['game_name', 'DESC'],

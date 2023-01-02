@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 
-const sequelize = new Sequelize("sequelize_node", "root", "", {
+const sequelize = new Sequelize("rtp-senin", "root", "", {
   dialect: "mysql",
   host: "localhost",
   logging: false,

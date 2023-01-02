@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router();
 
-const indexController = require("../controllers/index");
 const getidController = require("../controllers/getid");
-const postController = require("../controllers/post");
-const postpatternController = require("../controllers/postpattern");
+const inputCrud = require("../crud/input");
+const updateCrud = require("../crud/update");
+const addnewCrud = require("../crud/addnew");
+const postpatternCrud = require("../crud/postpattern");
 const getadvantController = require("../controllers/advantplay");
 const getambslotController = require("../controllers/ambslot");
 const getastrotechController = require("../controllers/astrotech");
@@ -34,38 +35,39 @@ const getyggdrasilController = require("../controllers/yggdrasil");
 
 
 // List Link Controller All
-router.post("/rtp/post", postController.getPost);
-router.post("/rtp/postpattern", postpatternController.getPattern);
-router.get("/rtp/", indexController.getHome);
-router.get("/rtp/game/detail/:id", getidController.getId);
+router.get("/api/add/c40c3479", addnewCrud.getAdd);
+router.post("/api/postpattern", postpatternCrud.getPattern);
+router.get("/api/game/detail/:id", getidController.getId);
+router.get("/api/patch/972168b8", updateCrud.getUpdate);
+router.post("/api/input/3c75dbb0", inputCrud.getInput);
 
 // List Link Setiap Provider
-router.get("/rtp/advantplay/game/", getadvantController.getAdvant);
-router.get("/rtp/ambslot/game/", getambslotController.getAmbslot);
-router.get("/rtp/astrotech/game/", getastrotechController.getAstrotech);
-router.get("/rtp/betsoft/game/", getbetsoftController.getBetsoft);
-router.get("/rtp/cq9/game/", getcq9Controller.getCq9);
-router.get("/rtp/crowdplay/game/", getcrowdplayController.getCrowdplay);
-router.get("/rtp/fachai/game/", getfachaiController.getFachai);
-router.get("/rtp/fungkygames/game/", getfungkygamesController.getFungkygames);
-router.get("/rtp/habanero/game/", gethabaneroController.getHabanero);
-router.get("/rtp/ionslot/game/", getionslotController.getIonslot);
-router.get("/rtp/jdb/game/", getjdbController.getJdb);
-router.get("/rtp/jili/game/", getjiliController.getJili);
-router.get("/rtp/joker/game/", getjokerController.getJoker);
-router.get("/rtp/live22/game/", getlive22Controller.getLive22);
-router.get("/rtp/microgaming/game/", getmicrogamingController.getMicrogaming);
-router.get("/rtp/onetouch/game/", getonetouchController.getOnetouch);
-router.get("/rtp/pgsoft/game/", getpgsoftController.getPgsoft);
-router.get("/rtp/playandgo/game/", getplayandgoController.getPlayandgo);
-router.get("/rtp/playstar/game/", getplaystarController.getPlaystar);
-router.get("/rtp/playtech/game/", getplaytechController.getPlaytech);
-router.get("/rtp/prgmtc/game/", getpragmaticController.getPragmatic);
-router.get("/rtp/reelkingdom/game/", getreelkingdomController.getReelkingdom);
-router.get("/rtp/slot88/game/", getslot88Controller.getSlot88);
-router.get("/rtp/spadegaming/game/", getspadegamingController.getSpadegaming);
-router.get("/rtp/toptrendgaming/game/", gettoptrendgamingController.getToptrendgaming);
-router.get("/rtp/yggdrasil/game/", getyggdrasilController.getYggdrasil);
+router.get("/api/advantplay/game/", getadvantController.getAdvant);
+router.get("/api/ambslot/game/", getambslotController.getAmbslot);
+router.get("/api/astrotech/game/", getastrotechController.getAstrotech);
+router.get("/api/betsoft/game/", getbetsoftController.getBetsoft);
+router.get("/api/cq9/game/", getcq9Controller.getCq9);
+router.get("/api/crowdplay/game/", getcrowdplayController.getCrowdplay);
+router.get("/api/fachai/game/", getfachaiController.getFachai);
+router.get("/api/fungkygames/game/", getfungkygamesController.getFungkygames);
+router.get("/api/habanero/game/", gethabaneroController.getHabanero);
+router.get("/api/ionslot/game/", getionslotController.getIonslot);
+router.get("/api/jdb/game/", getjdbController.getJdb);
+router.get("/api/jili/game/", getjiliController.getJili);
+router.get("/api/joker/game/", getjokerController.getJoker);
+router.get("/api/live22/game/", getlive22Controller.getLive22);
+router.get("/api/microgaming/game/", getmicrogamingController.getMicrogaming);
+router.get("/api/onetouch/game/", getonetouchController.getOnetouch);
+router.get("/api/pgsoft/game/", getpgsoftController.getPgsoft);
+router.get("/api/playandgo/game/", getplayandgoController.getPlayandgo);
+router.get("/api/playstar/game/", getplaystarController.getPlaystar);
+router.get("/api/playtech/game/", getplaytechController.getPlaytech);
+router.get("/api/prgmtc/game/", getpragmaticController.getPragmatic);
+router.get("/api/reelkingdom/game/", getreelkingdomController.getReelkingdom);
+router.get("/api/slot88/game/", getslot88Controller.getSlot88);
+router.get("/api/spadegaming/game/", getspadegamingController.getSpadegaming);
+router.get("/api/toptrendgaming/game/", gettoptrendgamingController.getToptrendgaming);
+router.get("/api/yggdrasil/game/", getyggdrasilController.getYggdrasil);
 
 
 module.exports = { router };

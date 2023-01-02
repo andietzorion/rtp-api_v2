@@ -4,6 +4,9 @@ const http = require('http');
 const cors = require('cors');
 
 const app = express();
+app.use(express.json());
+app.use(cors({ origin: ["http://localhost, http://localhost:3000"] }));
+
 
 const sequelize = require("./util/database");
 
